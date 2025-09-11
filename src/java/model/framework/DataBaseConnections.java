@@ -1,5 +1,6 @@
 package model.framework;
 
+import controller.AppConfig;
 import java.sql.Connection;
 import java.util.ArrayList;
 import java.sql.DriverManager;
@@ -28,7 +29,7 @@ public class DataBaseConnections  {
        
        Connection con;
        
-       con = DriverManager.getConnection("jdbc:mysql://localhost:3307/sgcm_bd", "root", "root");
+       con = DriverManager.getConnection(AppConfig.getInstance().getUrl(), AppConfig.getInstance().getUser(), AppConfig.getInstance().getPassword());
        pool.add(con);
        
        return con;

@@ -1,10 +1,18 @@
 package model.framework;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import controller.AppConfig;
+import java.net.ConnectException;
+import java.sql.SQLException;
 import java.util.HashMap;
+import java.util.StringJoiner;
+import java.sql.Statement;
+import java.util.ArrayList;
 
-public abstract class  DataAccessObject {
-    
-    
+public abstract class DataAccessObject {
+
     private String tabelEntity;
     private boolean novelEntity;
     private boolean changedEntity;
@@ -15,7 +23,7 @@ public abstract class  DataAccessObject {
         dirtyFields = new HashMap<>();
         setNovelEntity(true);
         setChangedEntity(false);
-        
+
     }
 
     private String getTabelEntity() {
@@ -31,12 +39,12 @@ public abstract class  DataAccessObject {
     }
 
     private void setTabelEntity(String TabelEntity) {
-        if (TabelEntity != null && !TabelEntity.isEmpty() && !TabelEntity.isBlank()){
+        if (TabelEntity != null && !TabelEntity.isEmpty() && !TabelEntity.isBlank()) {
             this.tabelEntity = TabelEntity;
-        }else{
+        } else {
             throw new IllegalArgumentException("Table must be valid");
         }
-        
+
     }
 
     protected void setNovelEntity(boolean noveEntity) {
@@ -45,39 +53,181 @@ public abstract class  DataAccessObject {
 
     protected void setChangedEntity(boolean changedEntity) {
         this.changedEntity = changedEntity;
-        if(this.changedEntity == false){
+        if (this.changedEntity == false) {
             dirtyFields.clear();
-        } 
-    }
-    
-    //Unity Of Works
-    protected void addChange(String field, Object value){
-        dirtyFields.put(field, value);
-        setChangedEntity(true);
-        
+        }
     }
 
-    private void insert(){
-        System.out.println("insert()");
+    //Unity Of Works
+    protected void addChange(String field, Object value) {
+        dirtyFields.put(field, value);
+        setChangedEntity(true);
+
+    }
+
+    private void insert() throws SQLException {
+
+        String dml = "INSERT INTO " + getTabelEntity();
+        
+        StringJoiner fields = new StringJoiner(",");
+        StringJoiner values = new StringJoiner(",");
+
+        for (String field : dirtyFields.keySet()) {
+            fields.add(field);
+            values.add("?");
+        }
+        
+        dml += " (" + fields + ")  VALUES  (" + values + ")";
+        
+        if(AppConfig.getInstance().isVerbose()){
+            System.out.println(dml);
+            
+            Connection con = DataBaseConnections.getInstance().getConnection();
+            PreparedStatement pst = con.prepareStatement(dml);
+            
+            
+            int index = 1;
+            for(String field : dirtyFields.keySet()){
+                pst.setObject(index, dirtyFields.get(field));
+                index++;
+            }
+            if(AppConfig.getInstance().isVerbose()){
+                System.out.println(pst);
+            }
+            pst.execute();
+            pst.close();
+            
+            DataBaseConnections.getInstance().closeConnection(con);
+        }
+    }
+
+    private void update()throws SQLException{
+
+        String dml = "UPDATE " + getTabelEntity() + " SET ";
+        
+        StringJoiner changes = new StringJoiner(",");
+        
+        for(String field : dirtyFields.keySet()){
+            changes.add(field + "=?");
+            
+        }
+        
+        dml += changes + " WHERE " + getWhereClauseForOneEntity() ;
+        
+        if(AppConfig.getInstance().isVerbose()){
+            System.out.println(dml);
+            
+            Connection con = DataBaseConnections.getInstance().getConnection();
+            PreparedStatement pst = con.prepareStatement(dml);
+            
+            
+            int index = 1;
+            for(String field : dirtyFields.keySet()){
+                pst.setObject(index, dirtyFields.get(field));
+                index++;
+            }
+            if(AppConfig.getInstance().isVerbose()){
+                System.out.println(pst);
+            }
+            pst.execute();
+            pst.close();
+            
+            DataBaseConnections.getInstance().closeConnection(con);
+        }
+    }
+
+    public void save()  throws SQLException{
+        if (isChangedEntity()) {
+            if (isNovelEntity()) {
+                insert();
+                setNovelEntity(false);
+            } else {
+                update();
+            }
+            setChangedEntity(false);
+        }
     }
     
-    private void update(){
-        System.out.println("update()");
+    public void delete() throws SQLException{
+        String dml = "DELETE FROM " + getTabelEntity() + " WHERE " + getWhereClauseForOneEntity();
+        
+        Connection con = DataBaseConnections.getInstance().getConnection();
+        Statement st = con.createStatement();
+        
+        if(AppConfig.getInstance().isVerbose()){
+            System.out.println(dml);
+        }
+        
+        st.execute(dml);
+        st.close();
+        
+        DataBaseConnections.getInstance().closeConnection(con);
     }
-       
-    public void save(){
-       if(isChangedEntity()){
-           if(isNovelEntity()){
-               insert();
-               setNovelEntity(false);
-           }else{
-               update();
-           }
-           setChangedEntity(false);
-       }
+    
+    public boolean load() throws SQLException{
+        boolean result = false;
+        String dql = "SELECT * FROM " + getTabelEntity() + " WHERE " + getWhereClauseForOneEntity();
+        
+        if(AppConfig.getInstance().isVerbose()){
+            System.out.println(dql);
+        }
+        
+        Connection con = DataBaseConnections.getInstance().getConnection();
+        
+        Statement st = con.createStatement();
+        
+        ResultSet rs = st.executeQuery(dql);
+        
+        result = rs.next();
+        
+        if(result){
+            ArrayList<Object> data = new ArrayList<>();
+            for(int i = 1; i <= rs.getMetaData().getColumnCount(); i++){
+                data.add(rs.getObject(i));
+            }
+            fill(data);
+            setNovelEntity(false);
+        }
+        return result;
     }
     
+    public <T extends DataAccessObject> ArrayList<T> getAllTableEntities() throws SQLException {
+        ArrayList<T> result = new ArrayList<>();
+        
+        String dql = "SELECT * FROM " + getTabelEntity();
+        
+          if(AppConfig.getInstance().isVerbose()){
+            System.out.println(dql);
+        }
+        
+        Connection con = DataBaseConnections.getInstance().getConnection();
+        
+        Statement st = con.createStatement();
+        
+        ResultSet rs = st.executeQuery(dql);
+        
+        while( rs.next()){
+            ArrayList<Object> data = new ArrayList<>();
+            
+            for(int i = 1; i <= rs.getMetaData().getColumnCount(); i++){
+                data.add(rs.getObject(i));
+                
+                
+                
+                
+            }
+            result.add(fill(data).copy());
+        }
+        st.close();
+        
+        DataBaseConnections.getInstance().closeConnection(con);
+        
+        return  result;
+    }
+
+    protected abstract String getWhereClauseForOneEntity();
     
+    protected abstract DataAccessObject fill(ArrayList<Object> data);
     
-    
+    protected abstract <T extends DataAccessObject> T copy();
 }

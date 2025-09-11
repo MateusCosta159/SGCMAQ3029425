@@ -1,18 +1,42 @@
 package model;
 
+import java.sql.SQLException;
+import java.util.ArrayList;
+import model.framework.DataBaseConnections;
+
 public class __Exemplo {
-    public static void main(String[] args) {
+
+    public static void main(String[] args) throws SQLException {
+
+//        System.out.println(DataBaseConnections.getInstance().getConnection());
         TipoUsuario tp = new TipoUsuario();
+//        
+//        tp.setId(12);
+//
+//        tp.setModuloAdministrativo("N");
+//        tp.setModuloAgendamento("N");
+//        tp.setModuloAtendimento("S");
+//
+//        tp.save();
+//        
+//        tp.setModuloAdministrativo("S");
+//        tp.setModuloAgendamento("S");   
+//        
         
-        tp.setId(5);
-        tp.setModuloAdministrativo("N");
-        tp.setModuloAgendamento("N");
-        tp.setModuloAtendimento("S");
+        //tp.save();
         
-        tp.save();
+//        tp.setId(5);
+//        boolean status = tp.load();
+//        System.out.println(status);
+//        System.out.println(tp);
+//        
+//        tp.setNome("tipo 5");
+//        tp.save(); // update
+//        System.out.println(tp);
+//        tp.delete();    
         
-        tp.setModuloAdministrativo("S");
+        ArrayList<TipoUsuario> lst = new TipoUsuario().getAllTableEntities();
         
-        tp.save();
+        System.out.println(lst);
     }
 }

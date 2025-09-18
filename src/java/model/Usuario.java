@@ -2,6 +2,7 @@ package model;
 
 import java.util.ArrayList;
 import model.framework.DataAccessObject;
+import org.apache.tomcat.jakartaee.commons.lang3.builder.EqualsBuilder;
 
 /**
  * Classe Usuario
@@ -113,6 +114,22 @@ public class Usuario extends DataAccessObject {
         
         return cp;
     }
+    
+    
+    
+    @Override
+    public boolean equals(Object obj){
+        if(obj instanceof Usuario){
+            Usuario aux = (Usuario) obj;
+            if(getId() == aux.getId()){
+                return true;
+            }else{
+                return false;
+            }
+    } else {
+        return false;
+    } 
+}
 
     /**
      * Representação em string do objeto.

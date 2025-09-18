@@ -227,6 +227,7 @@ public abstract class DataAccessObject {
             }
             fill(data);
             setNovelEntity(false);
+            setChangedEntity(false);
         }
         return result;
     }
@@ -267,4 +268,11 @@ public abstract class DataAccessObject {
 
     /** Retorna uma cópia da entidade. Usado no carregamento de listas. */
     protected abstract <T extends DataAccessObject> T copy();
+    
+    
+    
+    @Override
+    public boolean equals(Object obj){
+        throw new RuntimeException("equal must be overrided");
+    }
 }

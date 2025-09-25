@@ -1,30 +1,26 @@
 <html>
     <head>
-        <title>GetPost Formulario</title>
+        <title>GetPost Formulário</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <div>TODO write content</div>
-        <form action="http://localhost:8080/SGCMAQ3029425/Aulas/servlet/status/GetPost/" method="get">
-            <p>
-                <label for="CampoA">Campo A:</label>
-                <input type="text" id="CampoA" name="CampoA"/><b/><b/>
-                
-                
-                
-                <input type="text" id="opcaoA" name="opcaoA" value="opcaoA"/><b/><b/>
-                <label for="opcapA">Opção A:</label>
-                
-                <input type="text" id="opcaoB" name="opcaoB" value="opcaoB"/><b/><b/>
-                <label for="opcaoB">Opção B:</label>
-                
-                
-                <input type="submit" name="btnEnviar" value="Salvar">
-                    
-                
-            </p>
-            
-        </form>
+        <div>
+            <form action="http://localhost:8080/SGCMS2A2025/Aulas/servlet/getpost" method="get">
+                <h2>Formulário</h2>
+                    <p>
+                        <label for="campoA">Campo A: </label>
+                        <input type="text" id="campoA" name="campoA" /><br/><br/>
+
+                        <input type="checkbox" id="opcaoA" name="opcaoA" value="opcaoA"/>
+                        <label for="opcaoA">Opção A</label><br/><br/>
+
+                        <input type="checkbox" id="opcaoB" name="opcaoB" value="opcaoB"/>
+                        <label for="opcaoB">Opção B</label><br/><br/>
+
+                        <input type="submit" name="btEnviar" value="Salvar"/>
+                    </p>            
+            </form>
+        </div>
     </body>
 </html>

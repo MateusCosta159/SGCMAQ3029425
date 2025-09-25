@@ -7,14 +7,14 @@ import java.util.ArrayList;
 public class __Exemplo {
     public static void main(String[] args) throws SQLException {
         
-        TipoUsuario tp = new TipoUsuario();
-        
-        tp.setId(5);
-        tp.setModuloAdministrativo("N");
-        tp.setModuloAgendamento("N");
-        tp.setModuloAtendimento("S");
-        
-        tp.save(); // insert
+//        TipoUsuario tp = new TipoUsuario();
+//        
+//        tp.setId(6);
+//        tp.setModuloAdministrativo("N");
+//        tp.setModuloAgendamento("N");
+//        tp.setModuloAtendimento("S");
+//        
+//        tp.save(); // insert
 //        
 //        tp.setModuloAdministrativo("S");
 //        tp.setModuloAgendamento("S");
@@ -36,7 +36,7 @@ public class __Exemplo {
         System.out.println( lst );  
         
         Usuario us = new Usuario();
-        us.setId(13);
+        us.setId(14);
         us.setNome("Joao");
         us.setSenha("123");
         us.setTipoUsuarioId(5);

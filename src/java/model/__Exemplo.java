@@ -36,7 +36,7 @@ public class __Exemplo {
         System.out.println( lst );  
         
         Usuario us = new Usuario();
-        us.setId(14);
+        us.setId(7);
         us.setNome("Joao");
         us.setSenha("123");
         us.setTipoUsuarioId(5);

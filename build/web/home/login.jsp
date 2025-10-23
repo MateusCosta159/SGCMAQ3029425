@@ -46,7 +46,7 @@
 
 
             <label for="senha">Senha</label>
-            <input type="password" id="senha" name="senha" pattern="\d+" required><br/>
+            <input type="password" id="senha" name="senha" required><br/>
 
             <input type="submit" value="Login">
 

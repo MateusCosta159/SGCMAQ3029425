@@ -1,3 +1,5 @@
+<%@page import="model.TipoUsuario"%>
+<%@page import="java.util.ArrayList"%>
 <%@page import="model.Usuario"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -8,7 +10,7 @@
     </head>
     <body>
         <% 
-            Usuario us = null;
+            Usuario user = null;
             
             String action = request.getParameter("action");
             if( action == null ) {
@@ -18,34 +20,41 @@
                     
                     int id = Integer.valueOf( request.getParameter("id") );
                     
-                    us = new Usuario();
-                    us.setId(id);
-                    us.load();
+                    user = new Usuario();
+                    user.setId(id);
+                    user.load();
                     
                 }
-            }            
+            }      
+
+            ArrayList<TipoUsuario> tipoUsuario = new TipoUsuario().getAllTableEntities();
 
         %>
         <h1>Tipo Usuário</h1>
         
-        <form action="<%= request.getContextPath()  %>/home?action=<%= action %>&task=usuarios" method="post">
-            
+              <form action="<%= request.getContextPath()%>/home?action=<%= action%>&task=usuarios" method="post">
+
             <label for="id">Id:</label>
-            <input type="text" id="id" name ="id" pattern="\d+" title="apenas dígitos" value="<%= ( us != null ) ? us.getId() : "" %>" <%= ( us != null ) ? "readonly" : "" %> required><br/>   
-            
+            <input type="text" id="id" name="id" pattern="\d+" title="apenas digitos" value="<%= (user != null) ? user.getId() : "" %>" <%= (user != null) ? "readonly" : "" %> required ><br/>
+
             <label for="nome">Nome:</label>
-            <input type="text" id="nome" name ="nome" value="<%= ( ( us != null ) && ( us.getNome() != null ) ) ? us.getNome() : "" %>" ><br/>
-            
+            <input type="text" id="nome" name="nome" value="<%= ((user != null) && (user.getNome() != null)) ? user.getNome() : "" %>" ><br/>
+
             <label for="cpf">CPF:</label>
-            <input type="text" id="cpf" name ="cpf" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" title="DDD.DDD.DDD-DD" value="<%= ( ( us != null ) && ( us.getCpf() != null ) ) ? us.getCpf() : "" %>"><br/> 
-            
+            <input type="text" id="cpf" name="cpf" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" title="Formato: 000.000.000-00" value="<%= ((user != null) && (user.getCpf() != null)) ? user.getCpf() : "" %>" ><br/>
+           
             <label for="senha">Senha:</label>
-            <input type="password" id="senha" name ="senha" value="<%= ( ( us != null ) ) ? us.getSenha() : "" %>" required><br/>
-            
-            <label for="tipo_usuario_id">Tipo Usuário ID:</label>
-            <input type="text" id="tipo_usuario_id" name ="tipo_usuario_id" pattern="\d+" title="apenas dígitos" value="<%= ( ( us != null ) ) ? us.getTipoUsuarioId() : "" %>" required><br/>
-            
-            <input type="submit" name="Salvar" value="Salvar"> 
+            <input type="password" id="senha" name="senha" value="<%= ((user != null) && (user.getSenha() != null)) ? user.getSenha() : "" %>" required><br/>
+
+            <label for="tipo_usuario_id">Tipo Usuário:</label>
+            <select id="tipo_usuario_id" name="tipo_usuario_id" required>
+                <option value="">Selecione</option>
+                <% for (TipoUsuario tp : tipoUsuario) { %>
+                <option value="<%= tp.getId() %>" <%= (user != null && user.getTipoUsuarioId() == tp.getId()) ? "selected" : "" %>><%= tp.getNome() %></option>
+                <% } %>
+            </select><br/>
+
+            <input type="submit" name="Salvar" value="Salvar">
         </form>
         
     </body>

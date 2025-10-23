@@ -3,8 +3,7 @@
     <welcome-file-list>
         <welcome-file>/home/login.jsp</welcome-file>
     </welcome-file-list>
-    
-    
+
     <session-config>
         <!-- em minutos-->
         <session-timeout>2880</session-timeout>

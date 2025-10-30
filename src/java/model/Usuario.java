@@ -20,6 +20,7 @@ public class Usuario extends DataAccessObject {
     private String cpf;             // CPF do usuário
     private String senha;           // senha criptografada
     private int tipoUsuarioId;      // chave estrangeira para tipo_usuario.id
+    private String endereco;
 
     /**
      * Construtor padrão
@@ -49,6 +50,20 @@ public class Usuario extends DataAccessObject {
     public int getTipoUsuarioId() {
         return tipoUsuarioId;
     }
+
+    public String getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(String endereco) {
+    this.endereco = endereco;
+    addChange("endereco", this.endereco);
+}
+
+    
+    
+    
+    
 
     // --- Setters ---
     public void setId(int id) {
@@ -112,6 +127,7 @@ public class Usuario extends DataAccessObject {
         cpf = (String) data.get(2);
         senha = (String) data.get(3);
         tipoUsuarioId = (int) data.get(4);
+        endereco = (String) data.get(5);
         return this;
     }
 
@@ -128,6 +144,7 @@ public class Usuario extends DataAccessObject {
         cp.setCpf(getCpf());
         cp.senha = (getSenha());
         cp.setTipoUsuarioId(getTipoUsuarioId());
+        cp.setEndereco(getEndereco());
         
         cp.setNovelEntity(false); // indica que não é um objeto novo
         
@@ -157,6 +174,6 @@ public class Usuario extends DataAccessObject {
     @Override
     public String toString() {
         return "(" + getId() + ", " + getNome() + ", " + getCpf() + 
-               ", " + getSenha() + ", " + getTipoUsuarioId() + ")";
+               ", " + getSenha() + ", " + getTipoUsuarioId() +  getEndereco()  + ")";
     }
 }

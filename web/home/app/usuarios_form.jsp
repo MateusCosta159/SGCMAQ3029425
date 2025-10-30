@@ -31,9 +31,9 @@
             ArrayList<TipoUsuario> tipoUsuario = new TipoUsuario().getAllTableEntities();
 
         %>
-        <h1>Tipo Usuário</h1>
+        <h1>Usuário</h1>
         
-              <form action="<%= request.getContextPath()%>/home?action=<%= action%>&task=usuarios" method="post">
+        <form action="<%= request.getContextPath()%>/home?action=<%= action%>&task=usuarios" method="post">
 
             <label for="id">Id:</label>
             <input type="text" id="id" name="id" pattern="\d+" title="apenas digitos" value="<%= (user != null) ? user.getId() : "" %>" <%= (user != null) ? "readonly" : "" %> required ><br/>
@@ -54,6 +54,15 @@
                 <option value="<%= tp.getId() %>" <%= (user != null && user.getTipoUsuarioId() == tp.getId()) ? "selected" : "" %>><%= tp.getNome() %></option>
                 <% } %>
             </select><br/>
+
+           
+            <label for="cep">CEP:</label>
+            <input type="text" id="cep" name="cep" pattern="\d{5}-\d{3}" title="Formato: 00000-000" value="" ><br/>
+            <button type="button" onclick="buscarEndereco()">Buscar Endereço</button><br/>
+
+         
+            <label for="endereco">Endereço:</label><br/>
+            <textarea id="endereco" name="endereco" rows="4" cols="50"><%= ((user != null) && (user.getEndereco() != null)) ? user.getEndereco() : "" %></textarea><br/>
 
             <input type="submit" name="Salvar" value="Salvar">
         </form>

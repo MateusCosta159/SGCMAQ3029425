@@ -20,7 +20,9 @@
                 <th>ID</th>
                 <th>Nome</th>
                 <th>CPF</th>
+                <th>Endereço</th>
                 <th>Tipo Usuário</th>
+                
                 <th></th>
                 <th></th>
             </tr>
@@ -29,7 +31,8 @@
             <tr>
                 <td><%= us.getId() %></td>
                 <td><%= us.getNome() %></td>
-                <td><%= us.getCpf() %></td>
+                <td><%= us.getCpf() != null ? us.getCpf() : "-" %></td>
+                <td><%= us.getEndereco()%></td>
                 <td><%= us.getTipoUsuarioId() %></td>
                 
                 <td><a href="<%= request.getContextPath()  %>/home/app/usuarios_form.jsp?action=update&id=<%= us.getId()%>" >Alterar</a></td>

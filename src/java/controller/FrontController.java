@@ -154,6 +154,7 @@ public class FrontController extends HttpServlet {
         String nome = request.getParameter("nome");
         String cpf = request.getParameter("cpf");
         String senha = request.getParameter("senha");
+        String endereco = request.getParameter("endereco");
         int tipoUsuarioId = Integer.valueOf(request.getParameter("tipo_usuario_id"));
 
         Usuario user = new Usuario();
@@ -167,6 +168,7 @@ public class FrontController extends HttpServlet {
         user.setCpf(cpf);
         user.setSenha(senha);
         user.setTipoUsuarioId(tipoUsuarioId);
+        user.setEndereco(endereco);
 
         user.save();
 

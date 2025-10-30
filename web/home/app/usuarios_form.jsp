@@ -9,6 +9,7 @@
         <title>Usuário</title>
     </head>
     <body>
+        <%@include file="/home/app/modulos.jsp" %>
         <% 
             Usuario user = null;
             

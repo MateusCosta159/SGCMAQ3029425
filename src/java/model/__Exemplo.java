@@ -7,7 +7,7 @@ import java.util.ArrayList;
 public class __Exemplo {
     public static void main(String[] args) throws SQLException {
         
-//        TipoUsuario tp = new TipoUsuario();
+          TipoUsuario tp = new TipoUsuario();
 //        
 //        tp.setId(6);
 //        tp.setModuloAdministrativo("N");
@@ -34,13 +34,13 @@ public class __Exemplo {
         
         ArrayList<TipoUsuario> lst = new TipoUsuario().getAllTableEntities();
         System.out.println( lst );  
-        
-        Usuario us = new Usuario();
-        us.setId(7);
-        us.setNome("Joao");
-        us.setSenha("123");
-        us.setTipoUsuarioId(5);
-       
-        us.save();
+//        
+//        Usuario us = new Usuario();
+//        us.setId(7);
+//        us.setNome("Joao");
+//        us.setSenha("123");
+//        us.setTipoUsuarioId(5);
+////       
+//        us.save();
     }
 }

@@ -1,0 +1,9 @@
+02-Oct-2025 07:48:46.474 INFORMAÇÕES [http-nio-8080-exec-4] org.apache.catalina.core.ApplicationContext.log Manager: init: Associated with Deployer 'Catalina:type=Deployer,host=localhost'
+02-Oct-2025 07:48:46.474 INFORMAÇÕES [http-nio-8080-exec-4] org.apache.catalina.core.ApplicationContext.log Manager: init: Global resources are available
+02-Oct-2025 07:48:46.496 INFORMAÇÕES [http-nio-8080-exec-5] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+02-Oct-2025 07:48:46.502 INFORMAÇÕES [http-nio-8080-exec-7] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+02-Oct-2025 07:48:46.514 INFORMAÇÕES [http-nio-8080-exec-8] org.apache.catalina.core.ApplicationContext.log Manager: install: Installing context configuration at 'file:/tmp/context11357249909925736325.xml'
+02-Oct-2025 07:48:46.725 INFORMAÇÕES [http-nio-8080-exec-9] org.apache.catalina.core.ApplicationContext.log Manager: start: Starting web application '/SGCMS2A2025'
+02-Oct-2025 07:48:59.320 INFORMAÇÕES [http-nio-8080-exec-1] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+02-Oct-2025 07:49:00.614 INFORMAÇÕES [http-nio-8080-exec-2] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+02-Oct-2025 07:49:00.621 INFORMAÇÕES [http-nio-8080-exec-4] org.apache.catalina.core.ApplicationContext.log Manager: restart: Reloading web application '/SGCMS2A2025'

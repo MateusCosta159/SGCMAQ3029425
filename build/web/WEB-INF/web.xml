@@ -20,6 +20,16 @@
         <filter-name>AutenticadorApp</filter-name>
         <url-pattern>/home/app/*</url-pattern>
     </filter-mapping>
+    <filter>
+        <filter-name>AutorizadorModulo</filter-name>
+        <filter-class>controller.AutorizadorModulo</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>AutorizadorModulo</filter-name>
+        <url-pattern>/home/app/*</url-pattern>
+    </filter-mapping>
+
     <servlet>
         <servlet-name>GetPost</servlet-name>
         <servlet-class>Aulas.servlet.getpost.GetPost</servlet-class>

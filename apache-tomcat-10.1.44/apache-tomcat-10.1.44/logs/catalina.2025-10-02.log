@@ -1,0 +1,83 @@
+02-Oct-2025 07:48:42.577 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/10.1.44
+02-Oct-2025 07:48:42.581 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Aug 4 2025 13:14:17 UTC
+02-Oct-2025 07:48:42.582 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 10.1.44.0
+02-Oct-2025 07:48:42.582 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+02-Oct-2025 07:48:42.582 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            6.8.0-60-generic
+02-Oct-2025 07:48:42.582 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+02-Oct-2025 07:48:42.582 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /usr/lib/jvm/java-21-openjdk-amd64
+02-Oct-2025 07:48:42.582 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           21.0.7+6-Ubuntu-0ubuntu124.04
+02-Oct-2025 07:48:42.582 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Ubuntu
+02-Oct-2025 07:48:42.582 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /home/aluno/apache-tomcat-10.1.44
+02-Oct-2025 07:48:42.583 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /home/aluno/apache-tomcat-10.1.44
+02-Oct-2025 07:48:42.592 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/home/aluno/apache-tomcat-10.1.44/conf/logging.properties
+02-Oct-2025 07:48:42.592 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+02-Oct-2025 07:48:42.592 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dhttp.nonProxyHosts=localhost|127.0.0.1|dell-OptiPlex-3080
+02-Oct-2025 07:48:42.592 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+02-Oct-2025 07:48:42.592 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+02-Oct-2025 07:48:42.592 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dsun.io.useCanonCaches=false
+02-Oct-2025 07:48:42.593 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dorg.apache.catalina.security.SecurityListener.UMASK=0027
+02-Oct-2025 07:48:42.593 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+02-Oct-2025 07:48:42.593 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang.reflect=ALL-UNNAMED
+02-Oct-2025 07:48:42.593 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+02-Oct-2025 07:48:42.593 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+02-Oct-2025 07:48:42.593 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+02-Oct-2025 07:48:42.593 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+02-Oct-2025 07:48:42.593 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/home/aluno/apache-tomcat-10.1.44
+02-Oct-2025 07:48:42.593 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/home/aluno/apache-tomcat-10.1.44
+02-Oct-2025 07:48:42.594 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/home/aluno/apache-tomcat-10.1.44/temp
+02-Oct-2025 07:48:42.595 INFORMAÇÕES [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The Apache Tomcat Native library which allows using OpenSSL was not found on the java.library.path: [/opt/oracle/product/23ai/dbhomeFree/lib::/usr/java/packages/lib:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib]
+02-Oct-2025 07:48:42.897 INFORMAÇÕES [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+02-Oct-2025 07:48:42.913 INFORMAÇÕES [main] org.apache.catalina.startup.Catalina.load Server initialization in [544] milliseconds
+02-Oct-2025 07:48:42.950 INFORMAÇÕES [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+02-Oct-2025 07:48:42.950 INFORMAÇÕES [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/10.1.44]
+02-Oct-2025 07:48:42.957 INFORMAÇÕES [main] org.apache.catalina.startup.HostConfig.deployDirectory Diretório de instalação da aplicação web [/home/aluno/apache-tomcat-10.1.44/webapps/manager]
+02-Oct-2025 07:48:43.447 INFORMAÇÕES [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+02-Oct-2025 07:48:43.493 INFORMAÇÕES [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/aluno/apache-tomcat-10.1.44/webapps/manager] has finished in [533] ms
+02-Oct-2025 07:48:43.494 INFORMAÇÕES [main] org.apache.catalina.startup.HostConfig.deployDirectory Diretório de instalação da aplicação web [/home/aluno/apache-tomcat-10.1.44/webapps/host-manager]
+02-Oct-2025 07:48:43.648 INFORMAÇÕES [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+02-Oct-2025 07:48:43.651 INFORMAÇÕES [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/aluno/apache-tomcat-10.1.44/webapps/host-manager] has finished in [157] ms
+02-Oct-2025 07:48:43.651 INFORMAÇÕES [main] org.apache.catalina.startup.HostConfig.deployDirectory Diretório de instalação da aplicação web [/home/aluno/apache-tomcat-10.1.44/webapps/ROOT]
+02-Oct-2025 07:48:43.797 INFORMAÇÕES [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+02-Oct-2025 07:48:43.799 INFORMAÇÕES [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/aluno/apache-tomcat-10.1.44/webapps/ROOT] has finished in [148] ms
+02-Oct-2025 07:48:43.799 INFORMAÇÕES [main] org.apache.catalina.startup.HostConfig.deployDirectory Diretório de instalação da aplicação web [/home/aluno/apache-tomcat-10.1.44/webapps/docs]
+02-Oct-2025 07:48:43.957 INFORMAÇÕES [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+02-Oct-2025 07:48:43.959 INFORMAÇÕES [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/aluno/apache-tomcat-10.1.44/webapps/docs] has finished in [160] ms
+02-Oct-2025 07:48:43.959 INFORMAÇÕES [main] org.apache.catalina.startup.HostConfig.deployDirectory Diretório de instalação da aplicação web [/home/aluno/apache-tomcat-10.1.44/webapps/examples]
+02-Oct-2025 07:48:44.224 INFORMAÇÕES [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+02-Oct-2025 07:48:44.253 INFORMAÇÕES [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/aluno/apache-tomcat-10.1.44/webapps/examples] has finished in [294] ms
+02-Oct-2025 07:48:44.256 INFORMAÇÕES [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+02-Oct-2025 07:48:44.263 INFORMAÇÕES [main] org.apache.catalina.startup.Catalina.start Server startup in [1350] milliseconds
+02-Oct-2025 07:48:46.517 INFORMAÇÕES [http-nio-8080-exec-8] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [/home/aluno/apache-tomcat-10.1.44/conf/Catalina/localhost/SGCMS2A2025.xml]
+02-Oct-2025 07:48:46.519 ADVERTÊNCIA [http-nio-8080-exec-8] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/SGCMS2A2025] in deployment descriptor [/home/aluno/apache-tomcat-10.1.44/conf/Catalina/localhost/SGCMS2A2025.xml] has been ignored
+02-Oct-2025 07:48:46.716 INFORMAÇÕES [http-nio-8080-exec-8] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+02-Oct-2025 07:48:46.720 INFORMAÇÕES [http-nio-8080-exec-8] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [/home/aluno/apache-tomcat-10.1.44/conf/Catalina/localhost/SGCMS2A2025.xml] has finished in [203] ms
+02-Oct-2025 07:48:46.725 INFORMAÇÕES [http-nio-8080-exec-9] org.apache.catalina.util.LifecycleBase.start The start() method was called on component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/SGCMS2A2025]] after start() had already been called. The second call will be ignored.
+02-Oct-2025 07:49:00.621 INFORMAÇÕES [http-nio-8080-exec-4] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/SGCMS2A2025] has started
+02-Oct-2025 07:49:00.625 ADVERTÊNCIA [http-nio-8080-exec-4] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [SGCMS2A2025] registered the JDBC driver [com.mysql.cj.jdbc.Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+02-Oct-2025 07:49:00.625 ADVERTÊNCIA [http-nio-8080-exec-4] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [SGCMS2A2025] appears to have started a thread named [mysql-cj-abandoned-connection-cleanup] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:269)
+ java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1852)
+ java.base/java.lang.ref.ReferenceQueue.await(ReferenceQueue.java:71)
+ java.base/java.lang.ref.ReferenceQueue.remove0(ReferenceQueue.java:143)
+ java.base/java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:218)
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:84)
+ java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+ java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+ java.base/java.lang.Thread.run(Thread.java:1583)
+02-Oct-2025 07:49:00.793 INFORMAÇÕES [http-nio-8080-exec-4] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+02-Oct-2025 07:49:00.796 INFORMAÇÕES [http-nio-8080-exec-4] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/SGCMS2A2025] is completed
+02-Oct-2025 07:49:01.973 INFORMAÇÕES [mysql-cj-abandoned-connection-cleanup] org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+	java.lang.IllegalStateException: Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+		at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading(WebappClassLoaderBase.java:1400)
+		at org.apache.catalina.loader.WebappClassLoaderBase.getResource(WebappClassLoaderBase.java:987)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.checkThreadContextClassLoader(AbandonedConnectionCleanupThread.java:116)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:83)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+		at java.base/java.lang.Thread.run(Thread.java:1583)
+02-Oct-2025 07:49:28.433 INFORMAÇÕES [main] org.apache.catalina.core.StandardServer.await A valid shutdown command was received via the shutdown port. Stopping the Server instance.
+02-Oct-2025 07:49:28.434 INFORMAÇÕES [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+02-Oct-2025 07:49:28.434 INFORMAÇÕES [main] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+02-Oct-2025 07:49:28.449 INFORMAÇÕES [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+02-Oct-2025 07:49:28.457 INFORMAÇÕES [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]

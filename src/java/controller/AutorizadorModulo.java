@@ -50,7 +50,7 @@ public class AutorizadorModulo implements Filter {
         String path = uri.substring(context.length());
 
         // --- Verificação de módulo ADMINISTRATIVO ---
-        if (path.startsWith("/home/app/tipousuario") || path.startsWith("/home/app/usuarios")) {
+        if (path.startsWith("/home/app/adm/tipousuario") || path.startsWith("/home/app/adm/usuarios")) {
             if (!"S".equals(tipo.getModuloAdministrativo())) {
                 req.setAttribute("msg", "Acesso negado ao módulo Administrativo.");
                 req.getRequestDispatcher("/home/app/modulos.jsp").forward(request, response);
@@ -62,7 +62,7 @@ public class AutorizadorModulo implements Filter {
         if (path.contains("/agendamento") || path.contains("/agenda")) {
             if (!"S".equals(tipo.getModuloAgendamento())) {
                 req.setAttribute("msg", "Acesso negado ao módulo de Agendamento.");
-                req.getRequestDispatcher("/home/app/modulos.jsp").forward(request, response);
+                req.getRequestDispatcher("/home/app/adm/modulos.jsp").forward(request, response);
                 return;
             }
         }
@@ -71,7 +71,7 @@ public class AutorizadorModulo implements Filter {
         if (path.contains("/atendimento") || path.contains("/atend")) {
             if (!"S".equals(tipo.getModuloAtendimento())) {
                 req.setAttribute("msg", "Acesso negado ao módulo de Atendimento.");
-                req.getRequestDispatcher("/home/app/modulos.jsp").forward(request, response);
+                req.getRequestDispatcher("/home/app/adm/modulos.jsp").forward(request, response);
                 return;
             }
         }

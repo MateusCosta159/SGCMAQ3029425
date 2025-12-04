@@ -21,14 +21,23 @@
         <url-pattern>/home/app/*</url-pattern>
     </filter-mapping>
     <filter>
-        <filter-name>AutorizadorModulo</filter-name>
-        <filter-class>controller.AutorizadorModulo</filter-class>
+        <filter-name>AutenticadorAdm</filter-name>
+        <filter-class>controller.AutenticadorAdm</filter-class>
     </filter>
-
     <filter-mapping>
-        <filter-name>AutorizadorModulo</filter-name>
-        <url-pattern>/home/app/*</url-pattern>
+        <filter-name>AutenticadorAdm</filter-name>
+        <url-pattern>/home/app/adm/*</url-pattern>
     </filter-mapping>
+    
+    <filter>
+        <filter-name>AutenticadorAtm</filter-name>
+        <filter-class>controller.AutenticadorAtm</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>AutenticadorAtm</filter-name>
+        <url-pattern>/home/app/atm/*</url-pattern>
+    </filter-mapping>
+  
 
     <servlet>
         <servlet-name>GetPost</servlet-name>
